@@ -1,5 +1,6 @@
 <div class="container">
   <%= form_for @post do |f| %>
+    <%= f.text_field :title %>
     <label for="upload-file">
       <input type="file" id="upload-file">
     </label>
@@ -12,6 +13,8 @@
     </div>
   <% end %>
 <div>
+
+
 <script type="text/javascript">
   $(window).on('load', function() {
     var renderer = new marked.Renderer()
@@ -27,7 +30,7 @@
     new Vue({
       el: '#editor',
       data: {
-        input: '<%= j @post.text %>',
+        input: '<%== j @post.text %>',
       },
       filters: {
         marked: marked,
