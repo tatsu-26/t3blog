@@ -4,8 +4,8 @@
     <label for="upload-file">
       <input type="file" id="upload-file">
     </label>
-    <div class="content" id="editor">
-      <textarea name="post[name]" id="markdown" class="textarea" style="resize: none" rows="20" v-model="input" debounce="50"></textarea>
+    <div class="new_content" id="editor">
+      <textarea name="post[text]" id="markdown" class="textarea" style="resize: none" rows="20" v-model="input" debounce="50"></textarea>
       <div v-html="input | marked" id="marked-preview"></div>
     </div>
     <div class="text-right"> 
