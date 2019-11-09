@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise"
 gem 'compass-rails', '3.1.0'
 gem 'pry-rails'
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'

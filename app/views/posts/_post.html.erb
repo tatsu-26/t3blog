@@ -2,7 +2,8 @@
 
   <h1 class="uk-article-title uk-float-left"><a class="uk-link-reset" href=""><%= post.title %></a></h1>
 
-  <p class="uk-text-lead"><%= post.text %></p>
+  <p class="uk-text-lead" id="text"><%= markdown("#{post.text}") %></p>
+  <%# <%=div v-html="#{post.text} | marked" id="marked-preview"%>
 
   <div class="uk-grid-small uk-child-width-auto" uk-grid>
     <div>
@@ -14,3 +15,30 @@
   </div>
 
 </article>
+
+<script type="text/javascript">
+  $(window).on('load', function() {
+    var renderer =  marked.Renderer()
+    var text = document.getElementById(text)
+    // renderer.code = function(code, language) {
+    //   return '<pre'+'><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
+    // };
+
+    marked.setOptions({
+      renderer: renderer,
+      langPrefix: '',
+      breaks : true
+    });
+    new Vue({
+      el: '#text',
+      data: {
+        text: '<%== j post.text %>',
+      },
+      filters: {
+        marked: marked,
+      },
+    });
+  });
+</script>
+  
+
