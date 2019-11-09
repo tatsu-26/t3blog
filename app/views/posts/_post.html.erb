@@ -16,29 +16,5 @@
 
 </article>
 
-<script type="text/javascript">
-  $(window).on('load', function() {
-    var renderer =  marked.Renderer()
-    var text = document.getElementById(text)
-    // renderer.code = function(code, language) {
-    //   return '<pre'+'><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
-    // };
 
-    marked.setOptions({
-      renderer: renderer,
-      langPrefix: '',
-      breaks : true
-    });
-    new Vue({
-      el: '#text',
-      data: {
-        text: '<%== j post.text %>',
-      },
-      filters: {
-        marked: marked,
-      },
-    });
-  });
-</script>
-  
 
