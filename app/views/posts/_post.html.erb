@@ -7,10 +7,10 @@
 
   <div class="uk-grid-small uk-child-width-auto" uk-grid>
     <div>
-      <a class="uk-button uk-button-text" href="#">詳細</a>
+      <%= link_to "編集", "/posts/#{post.id}/edit", class: "uk-button uk-button-text"%>
     </div>
     <div>
-      <a class="uk-button uk-button-text" href="#">削除</a>
+      <%= link_to "削除", "/posts/#{post.id}", method: :delete, class: "uk-button uk-button-text"%>
     </div>
   </div>
 

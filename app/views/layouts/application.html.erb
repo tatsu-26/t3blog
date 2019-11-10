@@ -44,14 +44,14 @@
           <ul class="uk-navbar-nav">
             <li class="uk-active"><a href="#">プロぶろ</a></li>
             <li>
-              <a href="#">H O M E</a>
-              <div class="uk-navbar-dropdown">
+              <%= link_to "H O M E", "/posts"%>
+              <%# <div class="uk-navbar-dropdown">
                   <ul class="uk-nav uk-navbar-dropdown-nav">
                       <li class="uk-active"><a href="#">Active</a></li>
                       <li><a href="#">Item</a></li>
                       <li><a href="#">Item</a></li>
                   </ul>
-              </div>
+              </div> %>
             </li>
           </ul>
         </div>
@@ -60,20 +60,27 @@
             <% if user_signed_in? %>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
               <li><a href="#">やることリスト</a></li>
-              <li><a href="#">マイページ</a></li>
+              <li><%= link_to "マイページ", "/users/mypage" %>
+                <div class="uk-navbar-dropdown">
+                  <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li><%= link_to "投稿一覧", "/users/mypage"%></li>
+                    <li><a href="#">設定</a></li>
+                  </ul>
+                </div>
+              </li>
             <% else%>
               <li class="uk-active">
                 <%= link_to "新規登録", new_user_registration_path%>
               </li>
               <li>
                 <a href="#">ログイン</a>
-                <div class="uk-navbar-dropdown">
+                <%# <div class="uk-navbar-dropdown">
                   <ul class="uk-nav uk-navbar-dropdown-nav">
                       <li class="uk-active"><a href="#">Active</a></li>
                       <li><a href="#">Item</a></li>
                       <li><a href="#">Item</a></li>
                   </ul>
-                </div>
+                </div> %>
               </li>
             <%end%>
             
