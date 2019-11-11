@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: t3blog_production
-  username: t3blog
-  password: <%= ENV['T3BLOG_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
