@@ -1,0 +1,41 @@
+<div class="container">
+  <%= form_for @post, method: :patch do |f| %>
+    <%= f.text_field :title %>
+    <label for="upload-file">
+      <input type="file" id="upload-file"><%= @post.title %>
+    </label>
+    <div class="new_content" id="editor">
+      <textarea name="post[text]" id="markdown" class="textarea" style="resize: none" rows="20" v-model="input" debounce="50"><%= @post.text %></textarea>
+      <div v-html="input | marked" id="marked-preview"></div>
+    </div>
+    <div class="text-right"> 
+      <%= f.submit "変更する", class: "btn btn-info" %>
+    </div>
+  <% end %>
+<div>
+
+
+<script type="text/javascript">
+  $(window).on('load', function() {
+    var renderer = new marked.Renderer()
+    renderer.code = function(code, language) {
+      return '<pre'+'><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
+    };
+
+    marked.setOptions({
+      renderer: renderer,
+      langPrefix: '',
+      breaks : true
+    });
+    new Vue({
+      el: '#editor',
+      data: {
+        input: '<%== j @post.text %>',
+      },
+      filters: {
+        marked: marked,
+      },
+    });
+  });
+</script>
+  

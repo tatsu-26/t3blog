@@ -13,43 +13,77 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <script async src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script async src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script async src="https://sdk.amazonaws.com/js/aws-sdk-2.355.0.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
+    <title></title>
+    <link rel="stylesheet" href="uikit.min.css" />
+    <script src="jquery.js"></script>
+    <script src="uikit.min.js"></script>
+
+    <!-- Codemirror and marked dependencies -->
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/mode/markdown/markdown.js"></script>
+    <script src="codemirror/addon/mode/overlay.js"></script>
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <script src="codemirror/mode/gfm/gfm.js"></script>
+    <script src="marked.js"></script>
+
+    <!-- HTML editor CSS and JavaScript -->
+    <link rel="stylesheet" href="htmleditor.css">
+    <script src="htmleditor.js"></script>
   </head>
 
   <body>
     <header>
-      <nav class="uk-navbar-container nav" uk-navbar>
+      <nav class="uk-navbar-container nav headear" uk-navbar>
         <div class="uk-navbar-left">
           <ul class="uk-navbar-nav">
             <li class="uk-active"><a href="#">プロぶろ</a></li>
             <li>
-              <a href="#">H O M E</a>
-              <div class="uk-navbar-dropdown">
+              <%= link_to "H O M E", "/posts"%>
+              <%# <div class="uk-navbar-dropdown">
                   <ul class="uk-nav uk-navbar-dropdown-nav">
                       <li class="uk-active"><a href="#">Active</a></li>
                       <li><a href="#">Item</a></li>
                       <li><a href="#">Item</a></li>
                   </ul>
-              </div>
+              </div> %>
             </li>
-             <li><a href="#">マイページ</a></li>
           </ul>
         </div>
         <div class="uk-navbar-right">
           <ul class="uk-navbar-nav">
-            <li class="uk-active">
-              <%= link_to "新規登録", new_user_registration_path%>
-            </li>
-            <li>
-              <a href="#">ログイン</a>
-              <div class="uk-navbar-dropdown">
-                <ul class="uk-nav uk-navbar-dropdown-nav">
-                    <li class="uk-active"><a href="#">Active</a></li>
-                    <li><a href="#">Item</a></li>
-                    <li><a href="#">Item</a></li>
-                </ul>
-              </div>
-            </li>
-            <li><a href="#">やることリスト</a></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              <li><a href="#">やることリスト</a></li>
+              <li><%= link_to "マイページ", "/users/mypage" %>
+                <div class="uk-navbar-dropdown">
+                  <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li><%= link_to "投稿一覧", "/users/mypage"%></li>
+                    <li><a href="#">設定</a></li>
+                  </ul>
+                </div>
+              </li>
+            <% else%>
+              <li class="uk-active">
+                <%= link_to "新規登録", new_user_registration_path%>
+              </li>
+              <li>
+                <a href="#">ログイン</a>
+                <%# <div class="uk-navbar-dropdown">
+                  <ul class="uk-nav uk-navbar-dropdown-nav">
+                      <li class="uk-active"><a href="#">Active</a></li>
+                      <li><a href="#">Item</a></li>
+                      <li><a href="#">Item</a></li>
+                  </ul>
+                </div> %>
+              </li>
+            <%end%>
+            
           </ul>
           </div>
       </nav>

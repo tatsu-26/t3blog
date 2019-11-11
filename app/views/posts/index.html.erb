@@ -1,87 +1,15 @@
 <div class="content">
-  <article class="uk-article">
-
-      <h1 class="uk-article-title"><a class="uk-link-reset" href="">Heading</a></h1>
-
-      <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012. Posted in <a href="#">Blog</a></p>
-
-      <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-
-
-      <div class="uk-grid-small uk-child-width-auto" uk-grid>
-          <div>
-              <a class="uk-button uk-button-text" href="#">Read more</a>
-          </div>
-          <div>
-              <a class="uk-button uk-button-text" href="#">5 Comments</a>
-          </div>
+  <% @posts.each do |post| %>
+    <%= render partial: "post", locals: { post: post } %>
+  <% end %>
+</div>
+<div class="post_btn">
+  <%= link_to new_post_path, class: "btn_link" do %> 
+    <div class="btn_detail">
+      <div class="btn_text">
+        アウトプット
       </div>
-
-  </article>
-  <article class="uk-article">
-
-      <h1 class="uk-article-title uk-float-left"><a class="uk-link-reset" href="">Heading</a></h1>
-
-      <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012. Posted in <a href="#">Blog</a></p>
-
-      <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-
-
-      <div class="uk-grid-small uk-child-width-auto" uk-grid>
-          <div>
-              <a class="uk-button uk-button-text" href="#">Read more</a>
-          </div>
-          <div>
-              <a class="uk-button uk-button-text" href="#">5 Comments</a>
-          </div>
-      </div>
-
-  </article>
-  <article class="uk-article">
-
-      <h1 class="uk-article-title uk-float-left"><a class="uk-link-reset" href="">Heading</a></h1>
-
-      <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012. Posted in <a href="#">Blog</a></p>
-
-      <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-
-
-      <div class="uk-grid-small uk-child-width-auto" uk-grid>
-          <div>
-              <a class="uk-button uk-button-text" href="#">Read more</a>
-          </div>
-          <div>
-              <a class="uk-button uk-button-text" href="#">5 Comments</a>
-          </div>
-      </div>
-
-  </article>
-  <article class="uk-article">
-
-      <h1 class="uk-article-title uk-float-left"><a class="uk-link-reset" href="">Heading</a></h1>
-
-      <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012. Posted in <a href="#">Blog</a></p>
-
-      <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-
-
-      <div class="uk-grid-small uk-child-width-auto" uk-grid>
-          <div>
-              <a class="uk-button uk-button-text" href="#">Read more</a>
-          </div>
-          <div>
-              <a class="uk-button uk-button-text" href="#">5 Comments</a>
-          </div>
-      </div>
-
-  </article>
-  <div class="post_btn">
-    <%= link_to "", "posts/new", class: "btn_link"%>
-      <div class="btn_detail">
-        <div class="btn_text">
-          アウトプット
-          <i class="fas fa-thumbs-up"></i>
-        </div>
-      </div>
-  </div>
+      <i class="fas fa-thumbs-up"></i>
+    </div>
+  <% end %>
 </div>
