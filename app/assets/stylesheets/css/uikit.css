@@ -5875,12 +5875,6 @@ ul.uk-nav-sub {
 /*
  * Pass fill character to JS
  */
-/* .uk-leader-fill-content::before {
-  content: '.';
-}
-:root {
-  --uk-leader-fill-content: .;
-} */
 /* ========================================================================
    Component: Iconnav
  ========================================================================== */
