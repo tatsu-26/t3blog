@@ -1,20 +1,23 @@
-<article class="uk-article">
-
-  <h1 class="uk-article-title uk-float-left"><a class="uk-link-reset" href=""><%= post.title %></a></h1>
-
-  <p class="uk-text-lead" id="text"><%= markdown("#{post.text}") %></p>
-  
-
-  <div class="uk-grid-small uk-child-width-auto" uk-grid>
-    <div>
-      <%= link_to "編集", "/posts/#{post.id}/edit", class: "uk-button uk-button-text"%>
-    </div>
-    <div>
-      <%= link_to "削除", "/posts/#{post.id}", method: :delete, class: "uk-button uk-button-text"%>
-    </div>
+<body>
+  <div id="app">
+    <article class="uk-article">
+      <h1 class="uk-article-title uk-float-left">
+        <a class="uk-link-reset" href="" v-on:click="onclick">
+          <%= post.title %>
+        </a>
+      </h1>    
+    </article>
   </div>
-
-</article>
+</body>
+<script>
+  new Vue({
+    el: "#app",
+    methods: { 
+      onclick: function () {
+        
+      }
+    }
+  })
 
 
 
