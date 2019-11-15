@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get "mypage"
+      get "todo"
     end
   end
 end

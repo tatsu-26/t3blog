@@ -4,6 +4,7 @@
     <title>T3blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- BootstrapのCSS読み込み -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- jQuery読み込み -->
@@ -59,7 +60,7 @@
           <ul class="uk-navbar-nav">
             <% if user_signed_in? %>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-              <li><a href="#">やることリスト</a></li>
+              <li><%= link_to "やることリスト", todo_users_path, method: :get%>
               <li><%= link_to "マイページ", "/users/mypage" %>
                 <div class="uk-navbar-dropdown">
                   <ul class="uk-nav uk-navbar-dropdown-nav">

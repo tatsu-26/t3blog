@@ -1,0 +1,108 @@
+<body>
+  <div id="app">
+    <input type="text" v-model="addText" placeholder="ToDoを入力">
+    <button v-on:click="addToDo()">追加</button>
+    <hr>
+    <table>
+      <thead>
+      <tr>
+        <td>ID</td>
+        <td>ToDo</td>
+        <td>操作</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="todo in list" v-if="todo.flag === true">
+        <td>
+          {{ todo.id }}<br>
+          <button @click="changeToDo(todo.id)">作業完了</button>
+        </td>
+        <td class="todo">{{ todo.text }}</td>
+        <td>
+          <button @click="deleteToDo(todo.id)">削除</button>
+          <button @click="editToDo(todo.id)">更新</button>
+        </td>
+      </tr>
+      <tr v-for="todo in list" v-if="todo.flag === false" class="completeTasks">
+        <td>
+          {{ todo.id }}<br>
+          <button @click="changeToDo(todo.id)">戻す</button>
+        </td>
+        <td>
+          <button @click="deleteToDo(todo.id)">削除</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+<body>
+<script>
+  var app = new Vue({
+  el: '#app',
+  data: {
+    addText: '',
+    list: [],
+    uniqueKey: 0,
+  },
+  methods: {
+    addToDo() { 
+      if(this.addText){
+        this.list.unshift({
+          'text': this.addText,
+          'id': this.uniqueKey + 1,
+          'flag': true
+        });
+        this.addText = '';
+        this.uniqueKey++;
+      }
+    },
+    deleteToDo(id) {
+      var deleteIndex = "";
+      var check = confirm("本当に削除しますか？");
+      if (check === true) { 
+        this.list.some(function (value, index) {
+          if ( value.id === id) {
+            deleteIndex = index;
+          }
+        });
+        this.list.splice(deleteIndex, 1);
+      }
+    },
+    editToDo(id)  {
+      var newText = window.prompt("以下内容で更新します。");
+      if (newText === "") {
+        alert("入力欄が空欄です。");
+      } else if(newText !== null) {
+        this.edit(id, newText);
+      }
+    },
+    edit(id, text) {
+      var editIndex = '';
+      this.list.some(function (value, index) { 
+        if (value.id === id) {
+          editIndex = index;
+
+        }
+      });
+      this.list[editIndex].text = text;
+    },
+    changeToDo(id) {
+      var changeIndex = "";
+      this.list.some(function (value, index)  {
+        if (value.id === id) {
+          changeIndex = index;
+        }
+      });
+      this.list[changeIndex].flag = this.change(changeIndex);
+    },
+    change(changeIndex) {
+      if (this.list[changeIndex].flag === true) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+  }
+})
+</script>
