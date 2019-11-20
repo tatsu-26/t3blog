@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  namespace :api do
-    resources :posts, only: %i(show)
+  namespace :api, format: "json" do
+    resources :posts, only: [:index, :create, :update]
   end
   devise_for :users
   root to: "posts#index"

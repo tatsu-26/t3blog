@@ -1,24 +1,49 @@
 <body>
   <div id="app">
-    <article class="uk-article">
+    <div class="uk-card uk-card-body card">
+      <h3 class="uk-card-title">
+        <router-link to="/page2"><%= post.title %></router-link>
+      </h3>
+      <ul class="more_list">
+        <li class="list">
+          <%= link_to "詳細", post_path(post.id), method: :get %>
+        </li>
+        <% if user_signed_in? && current_user.id == post.user_id %>
+          <li class="list">
+            <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+          </li>
+          <li class="list">
+            <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+          </li>
+        <% end %>
+      </ul>
+      <router-view></router-view>
+    </div>
+
+    <%# <article class="uk-article">
       <h1 class="uk-article-title uk-float-left">
         <a class="uk-link-reset" href="" v-on:click="onclick">
-          <%= post.title %>
+          
         </a>
       </h1>    
-    </article>
+    </article> %>
   </div>
 </body>
 <script>
-  new Vue({
-    el: "#app",
-    methods: { 
-      onclick: function () {
-        
-        
-      }
-    }
+ 
+  const Page2 = { template: '<div>page2' }
+
+  const routes = [
+    { oath: '/page2', component: Page2 }
+  ]
+
+  const router = new VueRouter({
+    routes
   })
 
+  const app = new Vue({ 
+    router
+  }).$mount('#app')
+</script>
 
 

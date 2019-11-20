@@ -31,6 +31,10 @@ class PostsController < ApplicationController
     post.update(post_params) #if post.user_id == current_user.id
     redirect_to action: :index
   end
+
+  def show 
+    @post = Post.find(params[:id])
+  end
   
   private
   def post_params

@@ -75,3 +75,5 @@ gem 'pry-rails'
 gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 gem "webpacker", github: "rails/webpacker"
+# 変更を検知して自動コンパイルする
+gem "foreman"

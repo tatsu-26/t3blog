@@ -15,7 +15,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <script async src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script async src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.js'></script>
     <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
     <script async src="https://sdk.amazonaws.com/js/aws-sdk-2.355.0.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
@@ -23,19 +24,19 @@
     <link rel="stylesheet" href="uikit.min.css" />
     <script src="jquery.js"></script>
     <script src="uikit.min.js"></script>
+    <!--ulkit読み込み-->
 
-    <!-- Codemirror and marked dependencies -->
-    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
-    <script src="codemirror/lib/codemirror.js"></script>
-    <script src="codemirror/mode/markdown/markdown.js"></script>
-    <script src="codemirror/addon/mode/overlay.js"></script>
-    <script src="codemirror/mode/xml/xml.js"></script>
-    <script src="codemirror/mode/gfm/gfm.js"></script>
-    <script src="marked.js"></script>
+    <%# <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> %>
 
-    <!-- HTML editor CSS and JavaScript -->
-    <link rel="stylesheet" href="htmleditor.css">
-    <script src="htmleditor.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script async src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script async src="https://sdk.amazonaws.com/js/aws-sdk-2.355.0.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
+    <!--マークダウンエディター-->
+
+    
   </head>
 
   <body>
@@ -91,6 +92,5 @@
     </header>
 
     <%= yield %>
-    <%= javascript_tag "hello_vue" %>
   </body>
 </html>

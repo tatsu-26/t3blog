@@ -13,7 +13,12 @@
  *= require_tree .
  *= require_self
  */
-
+body {
+  color: #666666;
+}
+.content{
+  color: #666666;
+}
  .heading{
    color: white;
  }
