@@ -1,3 +1,3 @@
-json.text @post.text
-json.id @post.id
-json.title @post.title
+json.set! :post do
+  json.exrtact! @post, :id, :text, :title
+end

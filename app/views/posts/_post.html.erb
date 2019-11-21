@@ -2,7 +2,9 @@
   <div id="app">
     <div class="uk-card uk-card-body card">
       <h3 class="uk-card-title">
-        <router-link to="/page2"><%= post.title %></router-link>
+        <div>
+          <router-view></router-view>
+        </div>
       </h3>
       <ul class="more_list">
         <li class="list">
@@ -17,7 +19,6 @@
           </li>
         <% end %>
       </ul>
-      <router-view></router-view>
     </div>
 
     <%# <article class="uk-article">
@@ -29,7 +30,8 @@
     </article> %>
   </div>
 </body>
-<script>
+<%# <script>
+
  
   const Page2 = { template: '<div>page2' }
 
@@ -45,5 +47,5 @@
     router
   }).$mount('#app')
 </script>
-
+ %>
 

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  root to: "posts#index"
   namespace :api, format: "json" do
-    resources :posts, only: [:index, :create, :update]
+    resources :posts, only: [:index]
   end
   devise_for :users
-  root to: "posts#index"
   resources :posts 
   resources :users do
     collection do

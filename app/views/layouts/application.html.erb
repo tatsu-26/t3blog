@@ -35,8 +35,9 @@
     <script async src="https://sdk.amazonaws.com/js/aws-sdk-2.355.0.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
     <!--マークダウンエディター-->
-
     
+    <%= javascript_pack_tag "application" %>
+
   </head>
 
   <body>
@@ -61,7 +62,7 @@
           <ul class="uk-navbar-nav">
             <% if user_signed_in? %>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-              <li><%= link_to "やることリスト", todo_users_path, method: :get%>
+              <li class="todo"><%= link_to "やることリスト", todo_users_path, method: :get%>
               <li><%= link_to "マイページ", "/users/mypage" %>
                 <div class="uk-navbar-dropdown">
                   <ul class="uk-nav uk-navbar-dropdown-nav">
