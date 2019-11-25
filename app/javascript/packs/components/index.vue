@@ -10,74 +10,75 @@
         </div>
       </div>
         <modal v-if="showModal" @cancel="showModal = false">
-          <div slot="body">{{ showPost.post.text}}</div>
-        </modal>               
+          <div slot="body">
+            <!-- <p id="mmm" v-bind:title="showPost | mark-filter">{{ showPost | mark-filter }}</p> -->
+            <p v-html="convert(showPost)"></p>
+          </div>
+        </modal>
     </div>
   </div>
-      
+       
   
 </template>
 
 <script>
   import axios from "axios";
-  import Modal from "./MyModal.vue"
-
-export default {
-    components: {
-      Modal
-    },
-    data: function () {
-      return {
-        posts: [],
-        showPost: "",
-        showModal: false,
-        errors: ''
-      }
-    },
-    mounted: function () { 
-      this.fetchPosts();
-    },
-    methods: {
-      fetchPosts: function()  {
-        axios.get("/api/posts").then((response) => {
-          for(var i = 0; i < response.data.posts.length; i++) {
-            this.posts.push(response.data.posts[i])
-          }
-        }, (error) => { 
-          console.log(error);
-        })
+  import Modal from "./MyModal.vue";
+  import marked from 'marked';
+  export default {
+      components: {
+        Modal
       },
-      searchPost: function()  {
-        axios.get(`/api/posts/${this.deleteTarget}`).then(response =>{
-          this.showPost = response.data.post
-        })
-      }
-    }
-  // mounted () {
-  //   this.updateEmployees();
-  // },
-  // methods: {
-  //   deleteEmployee: function() {
-  //     if (this.deleteTarget <= 0) {
-  //       console.warn('deleteTarget should be grater than zero.');
-  //       return;
-  //     }
+      data: function () {
+        return {
+          posts: [],
+          showPost: "",
+          showModal: false,
+          errors: '',
+          text: "",
+          post: "",
 
-  //     axios
-  //       .delete(`/api/v1/employees/${this.deleteTarget}`)
-  //       .then(response => {
-  //         this.deleteTarget = -1;
-  //         this.updateEmployees();
-  //       })
-  //       .catch(error => {
-  //         console.error(error);
-  //         if (error.response.data && error.response.data.errors) {
-  //           this.errors = error.response.data.errors;
-  //         }
-  //       });
-  //   }
-  // }
+        }
+      },
+      mounted: function () { 
+        this.fetchPosts();
+      },
+      methods: {
+        fetchPosts: function()  {
+          axios.get("/api/posts").then((response) => {
+            for(var i = 0; i < response.data.posts.length; i++) {
+              this.posts.push(response.data.posts[i])
+            }
+          }, (error) => { 
+            console.log(error);
+          })
+        },
+        searchPost: function()  {
+          axios.get(`/api/posts/${this.deleteTarget}`).then(response =>{
+            this.showPost = response.data.post.post.text
+            
+          })          
+        },
+        convert: function(showPost) {
+          return marked(showPost)
+      }
+      
+       
+  }c
 }
-  
+//  Vue.filter("mark", function() {
+//         console.log("kkk")
+//           if (typeof showPost == "string") {
+//             showPost = showPost.toString()
+//             return marked(showPost)
+//           }
+//         })
+// Vue.filter("mark-filter", function(){ 
+//   return marked(showPost)
+// })
+
+
+ 
+
 </script>
 
