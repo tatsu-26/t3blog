@@ -16,13 +16,16 @@
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button" @click="$emit('ok')">
-                OK
-              </button>
               <button class="modal-default-button" @click="$emit('cancel')">
-                Cancel
+                Close
               </button>
             </slot>
+               <!-- <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+          </li>
+          <li class="list">
+            <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+          </li>
+        <% end %> -->
           </div>
         </div>
       </div>
@@ -31,7 +34,23 @@
 </template>
 
 <script>
-  
+  export default {
+      data: function () {
+        return {
+          editPost: "",
+          post: "",
+          edit: "編集",
+        }
+      },
+        editPost: function()  {
+          axios.get(`/api/posts/${this.Target}`).then(response =>{
+            console.log("kkk")
+            this.edit = response.data.post.post.id
+          })          
+        },
+       
+  }
+
 </script>
 <style scoped>
 .modal-mask {

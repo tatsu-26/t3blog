@@ -1,11 +1,11 @@
 <template>
   <div class="contents">
     <div class="content">
+      <div class="uk-text-lead ">{{ head }}</div>
       <div v-for="post in posts" v-bind:key="post.id">
         <div class="uk-card uk-card-body card">
           <h3 class="uk-card-title">
-            <div>{{ post.title }}</div>
-              <button @click="deleteTarget = post.id; showModal = true" v-on:click="searchPost">Delete</button>
+            <a @click="Target = post.id; showModal = true" v-on:click="searchPost">{{ post.title }}</a>
           </h3>
         </div>
       </div>
@@ -13,7 +13,10 @@
           <div slot="body">
             <!-- <p id="mmm" v-bind:title="showPost | mark-filter">{{ showPost | mark-filter }}</p> -->
             <p v-html="convert(showPost)"></p>
+            <a v-bind:href="'/posts/' + id">{{ edit }}</a>
+            <a v-bind:href="'/posts/' + id" data-method="delete">{{ destroy }}</a>
           </div>
+
         </modal>
     </div>
   </div>
@@ -37,7 +40,10 @@
           errors: '',
           text: "",
           post: "",
-
+          head: "記事一覧",
+          edit: "編集",
+          id: "",
+          destroy: "削除"
         }
       },
       mounted: function () { 
@@ -54,9 +60,9 @@
           })
         },
         searchPost: function()  {
-          axios.get(`/api/posts/${this.deleteTarget}`).then(response =>{
+          axios.get(`/api/posts/${this.Target}`).then(response =>{
             this.showPost = response.data.post.post.text
-            
+            this.id = response.data.post.post.id
           })          
         },
         convert: function(showPost) {
@@ -64,7 +70,7 @@
       }
       
        
-  }c
+  }
 }
 //  Vue.filter("mark", function() {
 //         console.log("kkk")
