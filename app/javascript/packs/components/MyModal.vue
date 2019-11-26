@@ -20,12 +20,6 @@
                 Close
               </button>
             </slot>
-               <!-- <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
-          </li>
-          <li class="list">
-            <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
-          </li>
-        <% end %> -->
           </div>
         </div>
       </div>
@@ -55,7 +49,7 @@
 <style scoped>
 .modal-mask {
   position: fixed;
-  z-index: 9998;
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
@@ -71,7 +65,7 @@
 }
 
 .modal-container {
-  width: 300px;
+  width: 1000px;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
