@@ -77,4 +77,4 @@ gem 'coderay'
 gem 'webpacker', '~> 4.x'
 # 変更を検知して自動コンパイルする
 gem "foreman"
-gem 'sprockets', '3.7.2'
+
