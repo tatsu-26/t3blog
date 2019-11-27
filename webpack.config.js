@@ -1,9 +1,10 @@
-// webpack.config.js
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+var Promise = require('es6-promise').Promise;
+var path = require('path');
 
 module.exports = {
-  // ...
-  plugins: [
-    new VueLoaderPlugin()
-  ]
+  context: path.join(__dirname, 'javascript'),
+  entry: {
+    myEntry: './hoge.js'
+  },
+...
 }
