@@ -6,7 +6,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: "vue-loader",
+        use: "babel-loader",
         exclude: /node_modules/
       }
     ]
