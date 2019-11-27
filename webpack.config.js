@@ -1,14 +1,9 @@
-const webpack = require('webpack');
-var path = require('path');
+// webpack.config.js
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: "babel-loader",
-        exclude: /node_modules/
-      }
-    ]
-  }
+  // ...
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 }
