@@ -1,5 +1,5 @@
 import Vue from 'vue/dist/vue.esm.js'
-import Router from "./router/router"
+import Router from "../../router/router"
 import VModal from 'vue-js-modal'
 import marked from 'marked';
 
