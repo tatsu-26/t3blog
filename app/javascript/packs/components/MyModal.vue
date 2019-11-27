@@ -38,7 +38,6 @@
       },
         editPost: function()  {
           axios.get(`/api/posts/${this.Target}`).then(response =>{
-            console.log("kkk")
             this.edit = response.data.post.post.id
           })          
         },
