@@ -10,6 +10,7 @@ module.exports = {
       // ... other rules
       {
         test: /\.vue$/,
+        exclude:/node_modules/,
         loader: 'vue-loader'
       },
       {
