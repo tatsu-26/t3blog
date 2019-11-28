@@ -3,7 +3,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const vue = require('./loaders/vue')
 
 //追記
-const { environment } = require('@rails/webpacker')
+
 const merge = require('webpack-merge')
 
 const myCssLoaderOptions = {
