@@ -72,17 +72,6 @@
        
   }
 }
-//  Vue.filter("mark", function() {
-//         console.log("kkk")
-//           if (typeof showPost == "string") {
-//             showPost = showPost.toString()
-//             return marked(showPost)
-//           }
-//         })
-// Vue.filter("mark-filter", function(){ 
-//   return marked(showPost)
-// })
-
 
  
 
