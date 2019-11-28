@@ -1,16 +1,25 @@
 const { environment } = require('@rails/webpacker')
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader/lib/plugin')
 const vue = require('./loaders/vue')
 
 
 //追記
 module.exports = {
-  test: /\.vue(\.erb)?$/,
-  use: [{
-    loader: 'vue-loader',
-    options: { VueLoaderPlugin } 
-  }]
+  module: {
+    rules: [
+      // ... other rules
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      }
+    ]
+  },
+  plugins: [
+    // make sure to include the plugin!
+    new VueLoaderPlugin()
+  ]
 }
+
 module.exports = environment
 
 
