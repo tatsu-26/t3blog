@@ -4,31 +4,7 @@ const vue = require('./loaders/vue')
 
 
 //追記
-module.exports = {
-  module: {
-    rules: [
-      // ... other rules
-      {
-        test: /\.vue$/,
-        exclude:/node_modules/,
-        loader: 'vue-loader'
-      },
-      {
-        test : / \.  vue $ / ,
-        loader : ' vue '
-      },
-      {
-        test : / \.  s [a|c] ss $ / ,
-        loader : ' style!css!sass '
-      }
 
-    ]
-  },
-  plugins: [
-    // make sure to include the plugin!
-    new VueLoaderPlugin()
-  ]
-}
 
 module.exports = environment
 
