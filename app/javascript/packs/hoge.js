@@ -5,7 +5,7 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import App from '../app.vue'
+// import App from '../app.vue'
 import Vue from 'vue/dist/vue.esm.js'
 import Router from "./router/router"
 import VModal from 'vue-js-modal'
