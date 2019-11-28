@@ -11,6 +11,34 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader'
+      },
+      {
+        test: /\.(scss|css)/,
+        use: [
+            'style-loader',
+            {
+                loader: 'css-loader',
+                options: {
+                    // オプションでCSS内のurl()メソッドの取り込みを禁止する
+                    url: false,
+                    // ソースマップ
+                    sourceMap: true,
+
+                    // 0 => no loaders (default);
+                    // 1 => postcss-loader;
+                    // 2 => postcss-loader, sass-loader
+                    importLoaders: 2
+                },
+            },
+            {
+                loader: 'sass-loader',
+                options: {
+                    // ソースマップ
+                    sourceMap: true,
+                }
+            }
+
+        ]
       }
     ]
   },
