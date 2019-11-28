@@ -3,11 +3,20 @@ const { VueLoaderPlugin } = require('vue-loader')
 const vue = require('./loaders/vue')
 
 //追記
-const tsloaderConf = { test: /\.(ts)?(\.erb)?$/,  loader: 'ts-loader' }
-const tsxloaderConf = { test: /\.(tsx)?(\.erb)?$/,  loader: 'babel-loader!ts-loader' }
-environment.loaders.set('typescript',  tsloaderConf)
-environment.loaders.set('tsx',  tsxloaderConf)
+const { environment } = require('@rails/webpacker')
+const merge = require('webpack-merge')
 
+const myCssLoaderOptions = {
+  modules: true,
+  sourceMap: true,
+  localIdentName: '[name]__[local]___[hash:base64:5]'
+}
+
+const CSSLoader = environment.loaders.get('sass').use.find(el => el.loader === 'css-loader')
+
+CSSLoader.options = merge(CSSLoader.options, myCssLoaderOptions)
+
+module.exports = environment
 
 environment.plugins.prepend('VueLoaderPlugin', new VueLoaderPlugin())
 environment.loaders.prepend('vue', vue)
