@@ -8,11 +8,11 @@
 // require("@rails/activestorage").start()
 // require("channels")
 
-import Turbolinks from 'turbolinks'
+// import Turbolinks from 'turbolinks'
 
-Turbolinks.start()
-import  " core-js / stable " ;
-import  " regenerator-runtime / runtime " ;
+// Turbolinks.start()
+// import  " core-js / stable " ;
+// import  " regenerator-runtime / runtime " ;
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
