@@ -1,24 +1,13 @@
-# README
+# ブログアプリ
+このアプリはrailsとvue.jsを用いてマークダウン記法でブログを投稿することが出来るアプリです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+・認証機能
+・記事の投稿、削除、編集機能
+・記事のタイトルを選択すると、記事の詳細がモーダルで表示される機能
+・投稿一覧（トップページ）にwebpackerを導入し、モーダルへとrouterで遷移
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+・ruby, ruby on rails, devise
+・vue.js, webpacker, marked.js, axios, vue-router, webpack
+・html, css, scss, uikit
+・mysql
+・heroku
