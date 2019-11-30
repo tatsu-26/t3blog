@@ -11,3 +11,11 @@
 ・html, css, scss, uikit
 ・mysql
 ・heroku
+
+
+
+
+
+
+
+
