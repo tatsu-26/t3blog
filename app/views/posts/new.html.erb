@@ -1,9 +1,6 @@
 <div class="container">
   <%= form_for @post do |f| %>
-    <%= f.text_field :title %>
-    <label for="upload-file">
-      <input type="file" id="upload-file">
-    </label>
+    <%= f.text_field :title, placeholder: "タイトル" %>
     <div class="new_content" id="editor">
       <textarea name="post[text]" id="markdown" class="textarea" style="resize: none" rows="20" v-model="input" debounce="50"></textarea>
       <div v-html="input | marked" id="marked-preview"></div>

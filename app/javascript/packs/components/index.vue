@@ -13,7 +13,7 @@
           <div slot="body">
             <!-- <p id="mmm" v-bind:title="showPost | mark-filter">{{ showPost | mark-filter }}</p> -->
             <p v-html="convert(showPost)"></p>
-            <a v-bind:href="'/posts/' + id">{{ edit }}</a>
+            <a v-bind:href="'/posts/' + id + '/edit'">{{ edit }}</a>
             <a v-bind:href="'/posts/' + id" data-method="delete">{{ destroy }}</a>
           </div>
 
