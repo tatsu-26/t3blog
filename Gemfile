@@ -77,4 +77,7 @@ gem 'coderay'
 gem 'webpacker', '~> 4.x'
 # 変更を検知して自動コンパイルする
 gem "foreman"
-
+gem "rspec-rails"
+gem "factory_bot_rails"
+gem "rails-controller-testing"
+gem "faker"
