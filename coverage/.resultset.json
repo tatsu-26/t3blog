@@ -1,0 +1,164 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/hokurou/projects/t3blog/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/helpers/api/posts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/helpers/markdown_helper.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/helpers/posts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/controllers/posts_controller.rb": [
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/models/post.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/hokurou/projects/t3blog/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/hokurou/projects/t3blog/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/hokurou/projects/t3blog/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0
+      ],
+      "/Users/hokurou/projects/t3blog/app/controllers/api/posts_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/hokurou/projects/t3blog/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/hokurou/projects/t3blog/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1575963786
+  }
+}
