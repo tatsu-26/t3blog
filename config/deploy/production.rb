@@ -1,5 +1,9 @@
 server '3.113.111.97', user: 'ec2-user', roles: %w{app db web}
-set :ssh_options, keys: %{./capistrano_test.pem}, auth_methods: %w{publickey}
+set :ssh_options, {
+  keys: %w(~/.ssh/id_rsa),
+  forward_agent: true,
+  auth_methods: %w(publickey)
+}
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
