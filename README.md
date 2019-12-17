@@ -17,7 +17,7 @@
 
 ・mysql
 
-・heroku
+・aws
 
 
 
