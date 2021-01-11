@@ -72,7 +72,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise"
 gem 'compass-rails', '3.1.0'
 gem 'pry-rails'
-gem 'redcarpet', '~> 2.3.0'
+gem 'redcarpet', '~> 3.5.1'
 gem 'coderay'
 gem 'webpacker', '~> 4.x'
 # 変更を検知して自動コンパイルする
